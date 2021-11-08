@@ -70,5 +70,41 @@ public class Primitives {
         var doubleSum = checkOut.doubleValue();
 
         System.out.println(doubleSum);
+
+        // Converting numeric types
+        short convShort = 100;
+        int convInt= convShort;  // 100
+        long convLong = convInt; // 100
+        // Only expanding type is allowed (from less memory usage to more memory usage)
+        // short someShort = convLong;  Error here!
+        // To do this special syntax can be used
+        short conVSpShort = (short) convLong;
+
+        // Booleans
+        boolean bool;  // It will be "false" in this case (not initialized)
+        bool = true;
+        boolean bool2 = !bool;
+
+        var i = 0;
+        var bool3 = (i != 0);
+
+        var strToBool = "true";
+        var bool4 = Boolean.parseBoolean(strToBool);
+
+        // Chars
+        char someChar = 'l';
+        // Can be created from unicodes
+        char charFromUnicode = '\u0024'; // It's a $ sign
+        // Transform to uppercase
+        char upperChar = Character.toUpperCase(someChar); // 'L'
+        // Creation of an array of characters
+        char[] chars = {'h', 'e', 'l', 'l', 'o'};
+        // Create string from array
+        String stringFromChars = new String(chars);
+        // Back operation
+        var charArrayFromString = stringFromChars.toCharArray();
+
+
+
     }
 }
