@@ -1,7 +1,6 @@
 package com.company;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 public class Primitives {
     public static void main(String[] args) {
@@ -103,8 +102,5 @@ public class Primitives {
         String stringFromChars = new String(chars);
         // Back operation
         var charArrayFromString = stringFromChars.toCharArray();
-
-
-
     }
 }
