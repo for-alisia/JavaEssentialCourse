@@ -3,6 +3,7 @@ package com.company;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class StringInJava {
     public static void main(String[] args) {
@@ -60,6 +61,13 @@ public class StringInJava {
         var upper = s4.toUpperCase();
         var charAt = s4.charAt(1); // h
         var bytes = s4.getBytes();
+        System.out.println("String length: " + s1.length()); // 12
+        var position = s1.indexOf("ing");
+        System.out.println("Position: " + position); // 9
+        var substr = s1.substring(3, 8);
+        System.out.println("Substring: " + substr); // st st
+        var manySpaces = "Hi      ";
+        var trimmed = manySpaces.trim(); // "Hi"
 
         // Working with builders
         var sb = new StringBuilder("Welcome");
@@ -76,5 +84,35 @@ public class StringInJava {
         var itemString = String.format(template, item, size, color, price);
         System.out.println(itemString); // Clothing item: Shirt, size: M, color: red, price: $4,99
 
+        // Comparing strings
+        String strToCampare1 = "Hello";
+        String strToCompare2 = new String("Hello");
+
+        // Bad way of comparing
+        if (strToCampare1 == strToCompare2) {
+            System.out.println("Strings match");
+        } else {
+            System.out.println("They don't match"); // Don't match
+        }
+
+        if (strToCampare1.equals(strToCompare2)) { // use equalsIgnoreCase() if you need to ignore case
+            System.out.println("Strings match"); // They match
+        } else {
+            System.out.println("They don't match");
+        }
+
+        // But for strings created without new operator first approach can work
+        // Java inside on creating string checks if the same string is already exists
+        // And if it's a case, then give a reference to that object to a new variable
+
+        // Strings from user input
+        var scanner = new Scanner(System.in);
+        System.out.print("Enter a value: "); // print (not println) keep cursor on the same line
+        var input = scanner.nextLine();
+        System.out.println(input);
+
+        System.out.print("Enter a number: ");
+        var inputNumber = scanner.nextInt(); // It will be converted to an int
+        System.out.println(inputNumber);
     }
 }
