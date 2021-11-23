@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.utilities.CalcHelper;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -21,13 +23,13 @@ public class Calculator {
     public static double calculate(double number1, double number2, String operation) {
         switch(operation) {
             case "+":
-                return add(number1, number2);
+                return CalcHelper.add(number1, number2);
             case "-":
-                return substract(number1, number2);
+                return CalcHelper.subtract(number1, number2);
             case "*":
-                return multiply(number1, number2);
+                return CalcHelper.multiply(number1, number2);
             case "/":
-                return divide(number1, number2);
+                return CalcHelper.divide(number1, number2);
             default:
                 System.out.println("Not valid operation!");
                 return 0;
@@ -39,19 +41,5 @@ public class Calculator {
         return scanner.nextDouble();
     }
 
-    public static double add(double number1, double number2) {
-       return number1 + number2;
-    }
 
-    public static double substract(double number1, double number2) {
-        return number1 - number2;
-    }
-
-    public static double multiply(double number1, double number2) {
-        return number1 * number2;
-    }
-
-    public static double divide(double number1, double number2) {
-        return number1 / number2;
-    }
 }
