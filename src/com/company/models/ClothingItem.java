@@ -1,8 +1,15 @@
 package com.company.models;
 
 public class ClothingItem {
+    // In java there is no special declaration for const
+    // But we can use this syntax
+    public static final String SHIRT = "Shirt";
+    public static final String PANTS = "Pants";
+    public static final String SHOES = "Shoes";
+
+    // Not constants
     private String type;
-    private String size;
+    private ClothingSize size;
     private double price;
     private int qty;
 
@@ -12,7 +19,7 @@ public class ClothingItem {
     public ClothingItem() {
     }
 
-    public ClothingItem(String type, String size, double price, int qty) {
+    public ClothingItem(String type, ClothingSize size, double price, int qty) {
         this.type = type;
         this.size = size;
         this.price = price;
@@ -27,11 +34,11 @@ public class ClothingItem {
         this.type = type;
     }
 
-    public String getSize() {
+    public ClothingSize getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(ClothingSize size) {
         this.size = size;
     }
 
