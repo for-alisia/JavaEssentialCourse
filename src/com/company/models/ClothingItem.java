@@ -6,6 +6,7 @@ public class ClothingItem {
     public static final String SHIRT = "Shirt";
     public static final String PANTS = "Pants";
     public static final String SHOES = "Shoes";
+    public static final String HAT = "Hat";
 
     // Not constants
     private String type;
